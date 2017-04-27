@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style type="text/css">
+			#text {
+				font-family:宋体;
+				font-size:large;
+				font-weight:600;
+				color:red;
+				text-align:justify;
+				/*text-indent设置正的为左边缩进,负的为右边缩进(只有align为left？)*/
+				text-indent:2em;
+				/*设置行高可以看出字默认在left,center*/
+				line-height:100px;
+				/*要求字中必须有空格*/
+				/*word-spacing:2em;*/
+				/*每个字符间间距包括字与空格间也会加间隔*/
+				/*letter-spacing:3em;*/
+				text-decoration:;
+				vertical-align:;
+				/*规定当 text-align 设置为 "justify" 时所使用的对齐方法。*/
+				/*规定text-align为justify的时候text-justify才可以使用*/
+				text-justify: ;
+				text-transform: ;
+			}
+			a:link {
+				color:aqua;
+			}
+			a:visited{
+				color:gray;
+			}
+			a:hover{
+				color:red;
+			}
+			a:active{
+				color:purple;
+			}
+			table {
+				width:400px;
+				height:200px;
+				border:solid;
+				border-bottom-width:10px;
+				border-bottom-style:dashed;
+				border-bottom-color:pink;
+				border-bottom-left-radius:60px;
+				border-top-left-radius:60px;
+				border-top-right-radius:60px;
+				border-bottom-right-radius:60px;
+			}
+			td {
+				border:groove;
+			}
+			#double1 {
+				border-style:double;
+			}
+			#hidden1 {
+				border-style:hidden;
+			}
+			#div1 {
+				width:300px;
+				height:200px;
+				background-color:green;
+				/*设置对应div里面的内容的对齐方式*/
+				text-align:left;
+				
+				/*设置无用*/
+				/*align-content: flex-end;*/
+				position:absolute;
+				top:50px;
+				right:50px;
+				/*margin的移动会使div和div内内容一起移动*/
+				/*margin: -30px -40px;*/
+				/*margin-top:50px;*/
+				/*通过测试发现margin是相对于元素原有位置进行移动的*/
+				/*当元素的原margin是大于设置的margin的时候则设置的margin无效*/
+				/*margin-right:50px;*/
+				/*padding顺序上右下左*/
+				/*padding:20px 30px 20px 30px;*/
+				/*padding-top的增加会显得div高,是因为里面的内容要占够它的空间*/
+				/*padding-top:10px;*/
+				/*padding-top:10px;*/
+				/*padding-left的增加会显得div长，是因为里面的内容占的空间一直要是原来的长度*/
+				/*padding-left:10px;*/
+				/*padding-left:200px;*/
+			}
+			#div2 {
+				width:300px;
+				height:200px;
+				background-color:#800080;
+				/*margin-top:50px;
+				margin-left:10px;*/
+				border:solid;
+				border-color:#00FFFF;
+				position:relative;
+				left:10px;
+				top:40px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--text-->
+		<p id="text">专 门 测 试 text</p>
+		<p align="right">测试align</p>
+		<a href="#">超链接测试</a>
+		<table>
+			<tr>
+				<td id="double1">1</td>
+				<td id="hidden1">2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+		</table>
+		<!--div标签居中需要靠center标签实现，其他如果需要定位div位置需要靠position实现-->
+		<!--<center>
+			<div id="div1">
+				<p>看内容在div内移动还是相对原有位置移动aaaaaa</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+				<p>看内容在div内移动还是相对原有位置移动</p>
+			</div>
+		</center>-->
+		<div id="div1">
+			<p>看内容在div内移动还是相对原有位置移动aaaaaa</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+		</div>
+		<div id="div2">
+			<p>看内容在div内移动还是相对原有位置移动aaaaaa</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+			<p>看内容在div内移动还是相对原有位置移动</p>
+		</div>
+		
+	</body>
+</html>

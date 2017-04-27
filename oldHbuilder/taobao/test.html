@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style type="text/css">
+			#shoppingCard table {
+				margin:20px auto;
+				width:80%;
+				height:230px;
+				border-collapse:collapse;
+				display:block;
+				border-top-left-radius:20px;
+				border-top-right-radius:20px;
+				/*overflow: hidden;*/
+			}
+			#shoppingCard tr:first-child {
+				
+				border-width:3px;
+				border-style:solid;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+				
+			}
+
+			/*第一行下面的所有单元格设置边框*/
+			/*#shoppingCard tr:first-child td {
+				border-style:solid;
+				border-left-style:hidden;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+				border-top-left-radius:20px;
+				border-top-right-radius:20px;
+			}*/
+			/*#shoppingCard tr:first-child td{
+				border-width:3px;
+				border-style:solid hidden solid hidden;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+				
+			}*/
+			/*#shoppingCard tr:first-child {
+				border-width:3px;
+				border-style:solid none none none;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+				
+			}*/
+			/*精髓*/
+			#shoppingCard tr td:first-child {
+				padding-left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--'<table border="1px;">
+			<tr>
+				<td colspan="2">
+					<img src="img/homePage/adv.jpg" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/homePage/wangyou.jpg" />
+				</td>
+				<td>
+					<a href="#">超值变形金刚2.5折！</a><br />
+					<a href="#">人们为啥对电视吼叫</a><br />
+					<a href="#">淘宝网首届翠友会！</a><br />
+					<a href="#">比基尼美女激情海滩</a><br />
+					<a href="#">想做最闪亮的mm吗</a><br />
+					<a href="#">千余中奖机会有你吗</a><br />
+					<a href="#">咖啡广告语有奖征集！</a><br />
+					<a href="#">淘宝入选平安网站！</a>
+				</td>
+			</tr>
+		</table>-->
+		<!--vspace对应margin-top/bottom hspace对应margin-right/left-->
+		<marquee id="marquee1" behavior="alternate"
+								scrollamount="10px"
+								scrolldelay="0"
+								vspace="0px" 
+								hspace="100px"
+								direction="right"
+								width="360px"
+								loop="-1"
+								>
+			<img src="img/homePage/adv/adv_1.jpg" />
+			<img src="img/homePage/adv/adv_2.jpg" />
+			<img src="img/homePage/adv/adv_3.jpg" />
+			<img src="img/homePage/adv/adv_4.jpg" />
+		</marquee>
+		<div id="shoppingCard" style="clear:left">
+			<div>
+				<img src="../img/shopping/p_mycar.gif" />
+				<span style="font-size:small; color:red;" >全场运费一律2元</span>
+			</div>
+			<div>
+				<table>
+					<tr >
+						<td width="50%" >商品名</td>
+						<td align="center"  colspan="3" >价格</td>
+						<td >数量</td>
+						<td>删除</td>
+					</tr>
+					<tr>
+						<td ><a href="#" class="aNoLine">攀高搓背靠垫按摩器（蓝色）（定制）</a></td>
+						<td class="fontColor" >￥258.00</td>
+						<td class="fontRed" >￥128.00</td>
+						<td>50折</td>
+						<td>
+							<input type="text" value="1" style="width:60px;" />
+						</td>
+						<td>
+							<input class="buttonNoBorder" type="button" value="删除" />
+						</td>
+					</tr>
+					<tr>
+						<td><a href="#"  class="aNoLine">郝彬美国口语—美国口语成功训练系统（MP3）</a></td>
+						<td class="fontColor" >￥480.00</td>
+						<td class="fontRed" >￥292.90</td>
+						<td>60折</td>
+						<td>
+							<input type="text" value="1" style="width:60px;" />
+						</td>
+						<td>
+							<input class="buttonNoBorder" type="button" value="删除" />
+						</td>
+					</tr>
+					<tr>
+						<td><a href="#"  class="aNoLine">简.奥斯汀全集（DVD-9）	(赠BBC产品目录...</a></td>
+						<td class="fontColor" >￥138.00</td>
+						<td class="fontRed" >￥103.90</td>
+						<td>80折</td>
+						<td>
+							<input type="text" value="1" style="width:60px;" />
+						</td>
+						<td>
+							<input class="buttonNoBorder" type="button" value="删除" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>
+								<a href="#"  class="aNoLine">继续挑选商品</a>
+							</p>
+						</td>
+						<td colspan="2">商品金额总计：￥<font style="color:red; font-weight: 800;" >876.00</font></td>
+						<td colspan="3">你共节省：￥351.2</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

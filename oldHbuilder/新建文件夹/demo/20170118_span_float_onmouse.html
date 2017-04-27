@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style type="text/css">
+			#img {
+				height:200px;
+				float:left;
+			}
+			div {
+				border:dotted;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--经测试over/move/enter异样-->
+		<!--leave/out一样-->
+		<!--down为鼠标按下的时候触发，up为鼠标弹起的时候触发-->
+		<!--wheel为当鼠标滚轮滚动的时候触发-->
+		<!--<marquee onmouseover="this.stop()" onmouseout="this.start() ">
+			<img src="img/20170117/libai.jpg" />
+			<img src="img/20170113/1.gif"  />
+			<img src="img/20170113/狮子.jpg" />
+		</marquee>-->
+		<marquee onmousewheel="this.stop()" onmouseout="this.start()  ">
+			<img src="img/20170117/libai.jpg" />
+			<img src="img/20170113/1.gif"  />
+			<img src="img/20170113/狮子.jpg" />
+		</marquee>
+		<!--<marquee onmousedown="this.stop()" onmouseup="this.start()  ">
+			<img src="img/20170117/libai.jpg" />
+			<img src="img/20170113/1.gif"  />
+			<img src="img/20170113/狮子.jpg" />
+		</marquee>-->
+		<img id="img" src="img/20170117/libai.jpg"/>
+		<h1>静夜思</h1>
+		<p>李白</p>
+		<!--<table border="dashed">
+			<tr>
+				<td>床前明月光，</td>
+			</tr>
+			<tr>
+				<td>疑是地上霜。</td>
+			</tr>
+			<tr>
+				<td>举头望明月，</td>
+			</tr>
+			<tr>
+				<td>低头思故乡。</td>
+			</tr>
+		</table>-->
+		
+		<div>
+			<p>床前明月光，</p>
+			<p style="clear:left;">疑是地上霜。</p>
+			<p>举头望明月，</p>
+			<p>低头思故乡。</p>
+		</div>
+		<span>span标签主要用于提示</span>
+		
+	</body>
+</html>

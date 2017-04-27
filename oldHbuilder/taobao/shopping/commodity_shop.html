@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<style type="text/css">
+			#main {
+				margin:0px auto;
+				width:1000px;
+				position:relative;
+			}
+			#topright {
+				position:absolute;
+				top:0px;
+				right:0px;
+			}
+			.pMarginMin {
+				margin: 5px 0px;
+			}
+			.smallFont {
+				font-size:small;
+			}
+			#topright p {
+				text-align:right;
+			}
+			#searchinput {
+				background-color:orange;
+				padding:5px 15px;
+				position:relative;
+				margin:-3px;
+			}
+			.imgWidthMax {
+				width:1000px;
+			}
+			.tabletitle {
+				border-top-style:solid;
+				border-top-width:2px;
+				border-top-color:deepskyblue;
+				background-color:aliceblue;
+				/*或者用text-indent(缩进可正可负)*/
+				padding-left:30px;
+				padding-bottom:5px;
+				font-family:"黑体";
+				font-size:22px;
+				font-weight:bolder;
+			}
+			#commodityInfo p {
+				margin:8px 0px;				
+			}
+			/*所在地使用*/
+			.pWordSpace {
+				word-spacing:1em;
+			}
+			#commodityInfo td {
+				padding-left:50px;
+			}
+			.buttonNoBorder {
+				background-color:white;
+				border-style:none;
+				font-size:16px;
+				color:blue;
+			}
+			.fontColor {
+				color:darkgrey;
+			}
+			.fontRed {
+				color:red;
+			}
+			#shoppingCard {
+				margin-top:50px;
+			}
+			#shoppingCard table {
+				width:100%;
+				height:230px;
+				/*border:3px;*/
+				/*border-style:solid;*/
+				border-top-left-radius:20px;
+				border-top-right-radius:20px;
+				/*必须加overflow不然不会成功 radius与collapse冲突*/
+				overflow: hidden;
+				border-collapse:collapse;
+			}
+			/*第一行下面的所有单元格设置边框*/
+			/*#shoppingCard tr:first-child td {
+				border-style:solid;
+				border-left-style:hidden;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+			}*/
+			#shoppingCard tr:first-child {
+				border-width:3px;
+				border-style:solid;
+				border-color:dodgerblue;
+				background-color:#00BFFF;
+			}
+			.aNoLine {
+				text-decoration:none;
+			}
+			#addressInfo {
+				padding:10px 0px 50px 30px;
+			}
+			#addressInfo p {
+				margin:5px;
+			}
+			/*精髓*/
+			#shoppingCard tr td:first-child {
+				padding-left:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div id="top">
+				<img src="../img/homePage/logo.gif" />
+				<div id="topright">
+					<a href="shopping/commodity_show.html">
+						<img  src="../img/homePage/banner_1.gif" />
+					</a>
+					<a href="shopping/commodity_detail.html">
+						<img  src="../img/homePage/banner_2.gif" />
+					</a>
+					<a href="shopping/commodity_shop.html" >
+						<img  src="../img/homePage/banner_3.gif" />
+					</a>
+					<img  src="../img/homePage/banner_4.gif" />
+					<img  src="../img/homePage/banner_5.gif" />
+					<a href="../client_center/server.html" >
+						<img  src="../img/homePage/banner_6.gif" />
+					</a>
+					<p class="smallFont pMarginMin">您好，欢迎来到淘宝! [<a href="#">免费注册</a>][<a href="#">登录</a>] 阿里旺旺 支付宝</p>
+				</div>
+			</div>
+			<div id="search">
+				<img style="margin:10px 0px 0px 0px;" width="1000px" src="../img/homePage/table_1.gif" />
+				<div id="searchinput">
+					<div>
+						<p class="pMarginMin">
+							<select>
+								<option>搜索宝贝</option>
+							</select>
+							<input type="text"/>
+							<select>
+								<option>所有分类</option>
+							</select>
+							<input type="button" name="search" value="搜索" />
+							<font class="smallFont"> [ 高级搜索 ] [ 使用帮助 ] </font>
+						</p>
+					</div>
+					<div>
+						<font class="smallFont" color="lightyellow">热门搜索： T恤 女鞋 手机 比基尼 魔兽世界 减肥 七分裤 娃娃衫 特价机票 连衣裙 Q币 美白防晒 热销品 二手房</font>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img  src="../img/shopping/buy_process01.gif" />
+			</div>
+			<div>
+				<div>
+					<p class="tabletitle" >确认宝贝价格与交易条件</p>
+				</div>
+				<div id="commodityInfo">
+					<img style="float:left; width:200px" src="../img/shopping/commodity_detailInfo1.gif" />
+					<table >
+						<tr>
+							<td>
+								<p>宝贝名称：</p>
+							</td>
+							<td>
+								<p>快乐幻想曲神恩宝石0.8元/个
+									<img src="../img/shopping/icon_alipay_16x16_v2.gif" />
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>当前价格：</p>
+							</td>
+							<td>
+								<p>0.8元/个</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>付款方式：</p>
+							</td>
+							<td>
+								<p>支付宝<img src="../img/shopping/icon_alipay_16x16_v2.gif" />或货到付款</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>所 在 地：</p>
+							</td>
+							<td>
+								<p>山西太原</p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>卖&nbsp;&nbsp;家：</p>
+							</td>
+							<td>
+								<p>爱票票
+									<img src="../img/shopping/online_pic.gif" />
+								</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div id="shoppingCard" style="clear:left">
+				<div>
+					<img src="../img/shopping/p_mycar.gif" />
+					<span style="font-size:small; color:red;" >全场运费一律2元</span>
+				</div>
+				<div>
+					<table>
+						<tr >
+							<td width="50%" >商品名</td>
+							<td align="center"  colspan="3" >价格</td>
+							<td >数量</td>
+							<td>删除</td>
+						</tr>
+						<tr>
+							<td ><a href="#" class="aNoLine">攀高搓背靠垫按摩器（蓝色）（定制）</a></td>
+							<td class="fontColor" >￥258.00</td>
+							<td class="fontRed" >￥128.00</td>
+							<td>50折</td>
+							<td>
+								<input type="text" value="1" style="width:60px;" />
+							</td>
+							<td>
+								<input class="buttonNoBorder" type="button" value="删除" />
+							</td>
+						</tr>
+						<tr>
+							<td><a href="#"  class="aNoLine">郝彬美国口语—美国口语成功训练系统（MP3）</a></td>
+							<td class="fontColor" >￥480.00</td>
+							<td class="fontRed" >￥292.90</td>
+							<td>60折</td>
+							<td>
+								<input type="text" value="1" style="width:60px;" />
+							</td>
+							<td>
+								<input class="buttonNoBorder" type="button" value="删除" />
+							</td>
+						</tr>
+						<tr>
+							<td><a href="#"  class="aNoLine">简.奥斯汀全集（DVD-9）	(赠BBC产品目录...</a></td>
+							<td class="fontColor" >￥138.00</td>
+							<td class="fontRed" >￥103.90</td>
+							<td>80折</td>
+							<td>
+								<input type="text" value="1" style="width:60px;" />
+							</td>
+							<td>
+								<input class="buttonNoBorder" type="button" value="删除" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>
+									<a href="#"  class="aNoLine">继续挑选商品</a>
+								</p>
+							</td>
+							<td colspan="2">商品金额总计：￥<font style="color:red; font-weight: 800;" >876.00</font></td>
+							<td colspan="3">你共节省：￥351.2</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div>
+				<div>
+					<p  class="tabletitle" >补充您的个人信息</p>
+				</div>
+				<div id="addressInfo">
+					<table>
+						<tr>
+							<td>
+								<p>姓名：</p>
+							</td>
+							<td>
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>省/市:</p>
+							</td>
+							<td>
+								<p>
+									省：<select style="width:100px;">
+										<option>
+											陕西省
+										</option>
+									</select>
+									市：<select style="width:100px;">
+										<option>
+											西安市
+										</option>
+									</select>
+									区：<select style="width:100px;">
+										<option>
+											莲湖区
+										</option>
+									</select>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td style="vertical-align:top">
+								<p style="margin:1px 5px 5px 5px;">
+									固定电话：
+								</p>
+							</td>
+							<td>
+								<input width="10px" />-
+								<input />-
+								<input />
+								<span>(区号-电话号码-分机)</span><br />
+								<span>(固定号码必填)</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p>联系地址：</p>
+								
+							</td>
+							<td>
+								<input  />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

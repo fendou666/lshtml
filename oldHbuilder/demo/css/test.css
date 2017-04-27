@@ -1,0 +1,21 @@
+body {
+	/*background-image:url(../img/20170112/new.png);
+	background-size:cover;*/
+	background-color:antiquewhite;
+}
+.class2 {
+	color:#FF0000;
+	text-align:center;
+	font-weight:bolder;
+}
+
+#testFont {
+	font-family:'宋体';
+	font-size:larger;
+	font-weight:800;
+	/*设置字体是否倾斜*/
+	font-style:italic;
+	/*设置字体的异样*/
+	font-variant: small-caps;
+	
+}

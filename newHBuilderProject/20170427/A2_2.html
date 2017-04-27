@@ -1,0 +1,24 @@
+<!--
+	进过测试发现，浏览器会进行读取优化，通过将网页在浏览器中打开，f12查看原码得知
+	按顺序读取，而骨架只读取一次，读到的就标记录入，后面读入的无效（指的是应该存在与head内部的设置）
+	如果是Body内部的标签会进行优化，将读入的内容放入第一个body体内
+-->
+
+<!DOCTYPE html>
+	<meta charset="ISO-8859-1">
+	<title>html外等级关系1</title>
+<html>
+	<meta charset="UTF-8">
+	<title>测试等级关系1</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>测试等级关系2</title>
+	</head>
+	<body>
+		<p>html内部的body</p>
+	</body>
+</html>
+<p>直接将p放在外面</p>
+<body>
+	<p>html外部的body</p>
+</body>
