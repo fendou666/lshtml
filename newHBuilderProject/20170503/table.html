@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#testTd td{
+			border:none;
+		}
+	</style>
+	<!--
+		tr默认没有边框
+		如果border设置边框，设置的是table的边框和td的边框
+	-->
+	<body>
+		<table>
+			<td>aasd</td>
+			<td>aasd2</td>
+			<td>aasd3</td>
+			<td>aasd4</td>
+		</table>
+		
+		<table border="11" id="testTd">
+			<td>aasd</td>
+			<td>aasd2</td>
+			<td>aasd3</td>
+			<td>aasd4</td>
+		</table>
+		
+		
+		<table border="5">
+				<td rowspan="2">阿里巴巴旗下网站</td>
+				<td>我要买</td>
+				<td>我要卖</td>
+				<td>我淘宝</td>
+		</table>
+		
+		<table border="5">
+			<tr>
+				<td rowspan="2">阿里巴巴旗下网站</td>
+				<td>我要买</td>
+				<td>我要卖</td>
+				<td>我淘宝</td>
+			</tr>
+			<tr>
+				<td colspan="3">您好，欢迎来淘宝</td>
+			</tr>
+		</table>
+		
+		
+		
+		<table border="5">
+			<tr>
+				<td rowspan="2">阿里巴巴旗下网站</td>
+				<td>我要买</td>
+				<td>我要卖</td>
+				<td>我淘宝</td>
+			</tr>
+			<tr>
+				<td colspan="3">您好，欢迎来淘宝</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

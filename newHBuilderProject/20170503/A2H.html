@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<!--
+		单选框当两个都设置选择的情况下，只显示最后一个被选中
+		密码必须写name不然提交后无效果
+	-->
+	<body>
+		<form action="https://www.baidu.com", method="get" target="_blank">
+			<p>用户名：
+				<input type="text" 
+						size="20" 
+						value="" 
+						name="user"
+						placeholder="只能是纯字母的最长30" 
+						maxlength="30"
+						autocomplete="on"
+						/></p>
+			<p>性别：
+				<input type="radio" name="sex"  checked="checked" value="man" />男
+				<input type="radio" name="sex"  checked="checked" value="women" />女
+			</p>
+			<p>爱好：
+				<input type="checkbox" name="hobby" checked="checked" value="sing" /> 唱歌
+				<input type="checkbox" name="hobby"  value="dance" /> 跳舞
+				<input type="checkbox" name="hobby"  value="basketball" /> 打篮球
+				<input type="checkbox" name="hobby"  checked="checked" value="football" /> 踢足球
+			</p>
+			<p>户籍所在地：
+				<select name="province">
+					<option >海南省</option>
+					<option selected="selected">陕西省</option>
+					<option>上海省</option>
+				</select>
+				<select name="area">
+					<option>渭南市</option>
+					<option selected="selected">西安市</option>
+					<option>宝鸡市</option>
+				</select>
+				<select name="county">
+					<option>莲湖区</option>
+					<option>未央区</option>
+					<option>雁塔区</option>
+				</select>
+			</p>
+			<p>现在居住地：
+				<select name="nowProvince">
+					<option>海南省</option>
+					<option selected="selected">陕西省</option>
+					<option>上海省</option>
+				</select>
+				<select name="nowArea">
+					<option>渭南市</option>
+					<option selected="selected">西安市</option>
+					<option>宝鸡市</option>
+				</select>
+				<select name="nowCounty">
+					<option>莲湖区</option>
+					<option>未央区</option>
+					<option>雁塔区</option>
+				</select>
+			</p>
+			<p>自我评价：
+				<textarea name="selfAssessment">
+				</textarea>
+			</p>
+			<p>设置密码：<input type="password" /></p>
+			<p>确认密码：<input type="password" name="pwd" /></p>
+			<p align="center">
+				<input type="image" name="submit" src="img/submit_32px.png" width="40"  />
+				<input type="image" name="reset"  src="img/reset_32px.png" width="40" onclick="reset();return false;" />				
+				<!--<input type="image" src="img/submit_32px.png" alt="提交" width="40"  border="0"/>
+				<input type="image" src="img/reset_32px.png" alt="重置" width="40"  border="0" onclick="reset();return false;" />-->
+			</p>
+		</form>
+		
+		<!--<form action="https://www.baidu.com", method="get" target="_blank">
+			<p>用户名：<input type="text" id="" value="" /></p>
+			<p>性别：
+				<input type="radio" name="sex" value="man" />男
+				<input type="radio" name="sex" value="women" />女
+			</p>
+			<p>爱好：
+				<input type="checkbox" id="" value="" />
+				<input type="checkbox" id="" value="" />
+				<input type="checkbox" id="" value="" />
+				<input type="checkbox" id="" value="" />
+			</p>
+			<p>户籍所在地：
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+			</p>
+			<p>现在居住地：
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+				<select>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+			</p>
+			<p>自我评价：
+				<textarea>
+				</textarea>
+			</p>
+			<p>设置密码：<input type="password" /></p>
+			<p>确认密码：<input type="password" /></p>
+			<p><input type="image" /></p>
+			
+		</form>-->
+	</body>
+</html>
