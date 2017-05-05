@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		
+		/*div#main div{
+			border-top: 2;
+			border-top-style: solid;
+			border-left: 2;
+			border-left-style: solid;
+		}
+		div#main div:nth-child(){
+			border-top: 2;
+			border-top-style: solid;
+			border-left: 2;
+			border-left-style: solid;
+		}*/
+		
+		div#main {
+			border-style: solid;
+			width:208px;
+			height: 312px;  /* 52*5+ 52  为什么312不可以，而310可以 (因为=号横跨2行高度需要加两个变宽)*/ 
+			/*position: relative;*/
+		}
+		div#d1 {
+			border:1px solid grey;
+			position: relative;
+			top:0px;
+			left:0px;
+			height:50px;
+		}
+		div#d1 input {
+			position:relative;
+			height: 30px;
+			width:150px;
+			top:8px;
+			left:24px;  /*(200[父]-150[子])/2 -boder父*/
+		}
+		
+		.ss {
+			border:1px solid grey;
+			height:50px;
+			width:50px;
+			text-align: center;  /*这个通过定位怎么实现的*/
+			position:relative;
+		}
+		/*需要增加两个边框 上面的总宽度为 width+2*borderWidth*/
+		div#d2 {
+			
+		}
+		div#d3 {
+			top:-52px; 
+			left:52px;
+		}
+		div#d4 {
+			top:-104px;
+			left: 104px;
+			
+		}
+		div#d5 {
+			top:-156px;
+			left:156px;
+		}
+		div#d6 {
+			top:-156px;
+		}
+		div#d7 {
+			top:-208px; 
+			left:52px;
+		}
+		div#d8 {
+			top:-260px;
+			left: 104px;
+		}
+		div#d9 {
+			top:-312px;
+			left:156px;
+		}
+		/*每个的高度应该是第多少个元素 (n-1)*52-52*行数*/		
+		div#d10 {
+			top:-312px;
+		}
+		div#d11 {
+			top:-364px; 
+			left:52px;
+		}
+		div#d12 {
+			top:-416px;
+			left: 104px;
+		}
+		div#d13 {
+			top:-468px;
+			left:156px;
+		}
+		
+		div#d14 {
+			top:-468px;
+		}
+		div#d15 {
+			top:-520px; 
+			left:52px;
+		}
+		div#d16 {
+			top:-572px;
+			left: 104px;
+		}
+		div#d17 {
+			top:-624px;
+			left:156px;
+			height: 102px;
+		}
+		/* (17-1)*52+52(因为=号多占一个)-52*4  */
+		div#d18 {
+			top:-676px;
+		}
+		div#d19 {
+			top:-728px; 
+			left:52px;
+		}
+		div#d20 {
+			top:-780px;
+			left: 104px;
+		}
+		/*如果CSS需要动态的时候不建议使用,因为每次都要计算,
+		如果一些固定的值可以考虑如下的方式*/
+		/*#con div:nth-child(4n+1) {
+			top:-52px; 
+		}
+		#con div:nth-child(4n+2) {
+			top:-52px; 
+			left:52px;
+		}
+		#con div:nth-child(4n+3) {
+			top:-104px;
+			left: 104px;
+		}
+		#con div:nth-child(4n) {
+			top:-156px;
+			left:156px;
+		}*/
+		
+	</style>
+	<body>
+		<div id="main">
+			<div id="d1">
+				<input type="text" name="" id="" value="" />
+			</div>
+			<div id="con">
+				<div class="ss" id="d2">
+					<p>C</p>
+				</div>
+				<div class="ss" id="d3">
+					<p>→</p>
+				</div>
+				<div class="ss" id="d4">
+					<p>÷</p>
+				</div>
+				<div class="ss" id="d5">
+					<p>×</p>
+				</div>
+				<div class="ss"  id="d6">
+					<p>7</p>
+				</div>
+				<div class="ss"  id="d7">
+					<p>8</p>
+				</div>
+				<div class="ss"  id="d8">
+					<p>9</p>
+				</div>
+				<div class="ss"  id="d9">
+					<p>-</p>
+				</div>
+				<div class="ss" id="d10">
+					<p>4</p>
+				</div>
+				<div class="ss" id="d11">
+					<p>5</p>
+				</div>
+				<div class="ss" id="d12">
+					<p>6</p>
+				</div>
+				<div class="ss" id="d13">
+					<p>+</p>
+				</div>
+				<div class="ss" id="d14">
+					<p>1</p>
+				</div>
+				<div class="ss" id="d15">
+					<p>2</p>
+				</div>
+				<div class="ss" id="d16">
+					<p>3</p>
+				</div>
+				<div class="ss" id="d17">
+					<p>=</p>
+				</div>
+				<div class="ss" id="d18">
+					<p>√</p>
+				</div>
+				<div class="ss" id="d19">
+					<p>0</p>
+				</div>
+				<div class="ss" id="d20">
+					<p>.</p>
+				</div>
+		</div>
+		
+	</body>
+</html>
