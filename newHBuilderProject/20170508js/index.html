@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>流叠加流切换流覆盖</title>
+		<script type="text/javascript">
+			function changeHTMLIO(){
+				document.write("我是新的流");
+				document.write("<h1>这是调用JS方法的流</h1>")
+			}
+			document.write("aaa")
+		</script>
+	</head>
+	<!--<body onload="changeHTMLIO()">
+		<p>这是网页原内容</p>
+	</body>-->
+	
+	<body>
+		<p>这是网页原内容</p>
+		
+		<button onclick="changeHTMLIO()">更改为JS中的DOCUMENT流</button>
+	</body>
+</html>

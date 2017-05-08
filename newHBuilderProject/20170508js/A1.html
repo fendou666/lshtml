@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>排序</title>
+	</head>
+	<script type="text/javascript">
+	
+		var dates = new Array(5);
+	
+		for(var i=0; i<5;i++){
+			document.write('number' + i + '<input type="number" id=num' + i + ' value="" /><br>');
+			console.log(i);
+		}
+		function checkData(){
+			var element;
+			for(var i=0; i<5;i++){
+				element = document.getElementById("num" + i);
+//				try{
+//					console.log(element.value);
+//				}catch(e){
+//					alert(e);
+//				}
+				if(!element.value){
+					alert("number"+i + "不存在");
+				}else{
+					console.log("number"+i + "为：" + element.value);
+					dates[i] = element.value;
+				}
+			}
+		}
+			
+		function sort(){
+			
+			var tmp = 0;
+			for (var m=0; m<dates.length; m++) {
+				for (var n=0; n<dates.length-m-1;n++) {
+					if(dates[n]<dates[n+1]){
+						
+						tmp = dates[n];
+						console.log(tmp);
+						dates[n] = dates[n+1];
+						dates[n+1] = tmp;
+					}
+				}
+			}
+			
+			returnVal();
+		}
+		
+		function returnVal(){
+			var element;
+			for(var i=0; i<5;i++){
+				element = document.getElementById("num" + i);
+				element.value = dates[i];
+			}
+		}
+		
+		function showValue(){
+			for(var i=0; i<5;i++){
+				console.log(dates[i]);
+			}
+		}
+		
+	</script>
+	<body>
+		<button onclick="checkData()">检查数据</button>
+		<button onclick="sort()">冒泡顺序</button>
+		<button onclick="showValue()">冒泡逆序</button>
+	</body>
+</html>
