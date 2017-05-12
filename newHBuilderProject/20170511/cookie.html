@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+同一个IP只有一个cookie, 即使不同的port但是也是将cook进行追加
+ -->
+<script type="text/javascript">
+	function jsFormSubmit(){
+		var user = document.getElementById("user").value;
+		var pwd = document.getElementById("pwd").value;
+		setCookie("user", user);
+		setCookie("pwd", pwd);
+		var url = "https://www.baidu.com?user=" + user + "&pwd=" + pwd;
+		document.forms["myform"].action = url; 
+		document.forms["myform"].submit();
+	}
+	function setCookie(c_name, c_value){
+		var nowt = new Date();
+		//var expiresT = nowt.getTime() + 24*60*60*1000;
+		nowt.setDate(25);
+		document.cookie= c_name + "=" + escape(c_value) + ";expires=" + nowt.toGMTString();
+	}
+	function getCookie(c_name)
+	{
+		if (document.cookie.length>0){
+			  c_start=document.cookie.indexOf(c_name + "=")
+			  if (c_start!=-1)
+			    { 
+			    c_start=c_start + c_name.length+1 
+			    c_end=document.cookie.indexOf(";",c_start)
+			    if (c_end==-1) c_end=document.cookie.length
+			    return unescape(document.cookie.substring(c_start,c_end))
+			    } 
+		}
+		return ""
+	}
+	
+	function initInfo(){
+		var user = getCookie("user");
+		var pwd = getCookie("pwd");
+		document.getElementById("user").value = user;
+		document.getElementById("pwd").value = pwd;
+	}
+	
+</script>
+</head>
+<body onload="initInfo()">
+	<form name="myform">
+		<span>用户名：</span>
+		<input type="text" name="user" id="user" />
+		<br>
+		
+		<span>密码：</span>
+		<input type="password" name="pwd" id="pwd" />
+		<br>
+		<input type="submit"  value="提交数据3"  onclick="jsFormSubmit()" />		
+	</form>
+
+</body>
+</html>

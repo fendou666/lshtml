@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			// 第一种方式
+			function checkAllData(){
+				var userid = document.getElementById("userid");
+				var pwd = document.getElementById("pwd");
+				if(userid.value==null || userid.value==""){
+					alert("用户名为空");
+					userid.focus();
+					return false;
+				}
+				if(pwd.value==null || pwd.value==""){
+					alert("密码为空");
+					pwd.focus();
+					return false;
+				}
+				return true;
+			}
+		
+		
+			//第二种方式
+			var ls = {};
+			ls.$ = function(id){
+				return document.getElementById(id);
+			}
+			ls.checkDate = function(element,  pos){
+				if(element.value == null || element.value == ""){
+					alert(pos + "是空值");
+					element.focus();
+					return false;
+				}else{
+					return true;
+				}
+			}
+			ls.checkAll = function(){
+//				var rec = true;
+//				if(!this.checkDate(this.$("userid"), "用户名")){
+//					rec = false;
+//				};
+//				if(!this.checkDate(this.$("pwd"), "密码")){
+//					rec = false;
+//				};
+//				return rec;
+				if(!this.checkDate(this.$("userid"), "用户名") | !this.checkDate(this.$("pwd"), "密码")){
+					return false;
+				};
+				return true;
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<form action="funcPosition.html" method="get" target="_self">
+			用户名：<input type="text" name="userid" id="userid" value="" /> <br />
+			密码：<input type="password" name="pwd" id="pwd" value="" /> <br />
+			<!--
+				submit中onclick加上return 后 就不会跳转提交网页啦
+			-->
+			<!--<input type="submit" onclick="return checkAllData()" value="提交"/>-->
+			<input type="submit" onclick="return ls.checkAll()" value="提交"/>
+		</form>
+		
+	</body>
+</html>

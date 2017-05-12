@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+		function aa(){
+			console.log("我是被调用的");
+		}
+		// 第一种js现场直接调用
+		aa();
+		// 第三种
+//		document.getElementById("b1").onclick=aa;
+//		这种方式无效，是因为html从上到下运行，b1还未被初始化
+//		document.getElementById("b1").onclick=function(){
+//			console.log("我是先绑定后触发");
+//		};
+		
+		// 第三种直接无效的时候通过，onload先将html加载完成，在绑定事件
+		function registerContrl(){
+			document.getElementById("b1").onclick=function(){
+				console.log("我是先绑定后触发");
+			};
+		}
+		
+	</script>
+	<body onload="registerContrl()">
+		<!--
+			第二种调用
+		-->
+		<a id="a1" onclick="aa()">点击我</a>
+		
+		
+		<button id="b1" >我是按钮</button>
+	</body>
+</html>

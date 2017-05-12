@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var timeThread;
+			var colors = new Array("red", "blue", "green", "yellow");
+			var colorIndex = 0;
+			function setTime(){
+				document.getElementById("time").style.borderColor=colors[colorIndex++%4];
+				document.getElementById("time").innerText = (new Date()).toLocaleString();
+			}
+			function testInterval(){
+				timeThread = window.setInterval("setTime()", 1000);
+			}
+			function closeTimeInterval(){
+				window.clearInterval(timeThread);
+				document.getElementById("time").innerText = "时间线程被结束";
+				window.setTimeout("alert('时间线程2秒前被终止')", 2000);
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="time" style="border:1px solid">111</div>
+		<button onclick="testInterval()">启动线程循环显示时间</button>
+		<button onclick="closeTimeInterval()">关闭相应的线程</button>
+	</body>
+</html>

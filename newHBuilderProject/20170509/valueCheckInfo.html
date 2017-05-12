@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//初始化信息
+			var objUserid;
+			var objPwd;
+			var objCuserid;
+			var objCpwd;
+			var objErrInfo;
+			function initInfo(){
+				objUserid = document.getElementById("userid"); 
+				objPwd = document.getElementById("pwd");
+				objCuserid = document.getElementById("c_userid");
+				objCpwd = document.getElementById("c_pwd");
+				objErrInfo = document.getElementById("errInfo");
+			}
+			
+			// display不是dispaly
+			checkAllData = function(){
+				var msg = "";
+				objCuserid.style.display = "none";
+				objCpwd.style.display = "none";
+				objErrInfo.style.display = "none";
+				if(objUserid.value==null || objUserid.value==""){
+//					objCuserid.style.display = "block";
+//					objErrInfo.style.display = "block";
+					objCuserid.style.display = "inline";
+					objErrInfo.style.display = "inline";
+					objUserid.focus();
+					msg+="用户名为空";
+				}
+				if(objCpwd.value==null || objCpwd.value==""){
+//					objCpwd.style.display = "block";
+//					objErrInfo.style.display = "block";
+					objCpwd.style.display = "inline";
+					objErrInfo.style.display = "inline";
+					objCpwd.focus();
+					msg = msg==""? "密码为空": msg+"\n密码为空";
+				}
+				if(msg == ""){
+					return true;
+				}else {
+					objErrInfo.innerText = msg;
+					return false;
+				}
+			}
+			
+		</script>
+	</head>
+	<body onload="initInfo()">
+		<form action="#" method="get">
+			<span>用户名：</span>
+			<input type="text" name="userid" id="userid" value="" />
+			<span id="c_userid" style="color:red; display: none;">*</span>
+			<br>
+			<span>密码：</span>
+			<input type="text" name="pwd" id="pwd" value="" />
+			<span id="c_pwd" style="color:red; display: none;">*</span>
+			<br>
+			<!--<button onclick="checkAllData()">测试</button>--> 
+			<input type="submit" onclick="return checkAllData()" value="提交"/>
+			<p id="errInfo" style="color:red; display: none;">
+				
+			</p>
+		</form>
+		
+	</body>
+</html>

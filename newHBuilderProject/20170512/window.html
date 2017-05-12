@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		function showConfirmValue(){
+			var rec = window.confirm("确认要关闭当前网页吗?");
+			alert("当前的选择值是：" + rec);
+			if (rec){
+				self.close();
+			}else {
+				console.log("未选择确定按钮");
+			}
+		}
+		
+		function showPrompt(){
+			var age = window.prompt("请输入你的年龄", "0");
+			alert("年龄是：" + age);
+		}
+		
+	</script>
+	<body>
+		<button onclick="showConfirmValue()">测试confirm</button>
+		<button onclick="showPrompt()">测试prompt</button>
+	</body>
+</html>

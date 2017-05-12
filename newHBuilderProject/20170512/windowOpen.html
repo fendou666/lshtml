@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testWindowsOpen(){
+				//var newW = window.open("child.html", "", "height=200px,width=200px");
+				var newW = window.open("child.html", "", "");
+				newW.onload = function(){
+					//newW.document.all.iid.value = "1111";
+					//var ffValue = document.getElementById("ff").value;
+					//newW.document.all.iid.value = ffValue;
+					//newW.document.write("直接覆盖的值");
+					newW.document.getElementById("iid").value = "3333";
+				}
+				newW.document.write("直接覆盖的值");
+			}
+			
+			function testWindowsOpen(){
+				var newW = window.open("child.html", "", "");
+				newW.onload = function(){
+				}
+				newW.document.getElementById("iid").value = "4444";
+				newW.document.write("直接覆盖的值");
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" name="ff" id="ff" value="" />
+		<button onclick="testWindowsOpen()">测试亲子窗口打开</button>
+	</body>
+</html>

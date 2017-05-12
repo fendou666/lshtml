@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+			var ary = new Array(1,234,22, 341,12);
+//			ary.sort(function(){return Math.random()>0.5?1:-1});
+			ary.sort(function(){return 1});
+			console.log(ary.join('_'));
+			
+			function cmp(a, b) {
+				return (a-b)*1;
+			}
+			ary.sort(cmp);
+			console.log(ary.toString());
+			
+			function reverseCmp(a, b) {
+				return (a-b)*-1;
+			}
+			console.log(typeof ary[0]);
+			ary.sort(reverseCmp);
+			console.log(ary.toString());
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

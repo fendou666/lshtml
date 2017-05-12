@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>皮肤切换</title>
+		<link id="skinLK" rel="stylesheet" type="text/css" href="css/skin1.css"/>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function skinSet(){
+				var skinValue = document.getElementById("skin").value;
+				setCookie("skin", skinValue);
+//				alert(skinValue);
+				document.getElementById("skinLK").href = "css/skin"+ skinValue + ".css";
+			}
+			function getSkin(){
+				var skinValue = getCookie("skin");
+				
+//				alert(skinValue);
+				document.getElementById("skin").value = skinValue;
+				document.getElementById("skinLK").href = "css/skin" + skinValue + ".css";
+			}
+		</script>
+	</head>
+	<body onload="getSkin()">
+		1.link css引入皮肤css <br>
+		2. 通过js控制更改link的href属性以此更改皮肤 <br>
+		
+		<select id="skin" onchange="skinSet()">
+			<option value="1">皮肤1</option>
+			<option value="2">皮肤2</option>
+			<option value="3">皮肤3</option>
+		</select>
+	</body>
+</html>
