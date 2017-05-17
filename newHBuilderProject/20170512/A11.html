@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			@keyframes pockChangeBefor{
+				from{
+					transform: rotateY(90deg);
+				}
+			}
+			
+			@keyframes pockChangeEnd{
+				from{
+					transform: rotateY(180deg);
+				}
+			}
+			
+			div#area1 {
+				position:absolute;
+				margin-left:10%;
+			}
+			div#area2 {
+				position:absolute;
+				margin-left:28%;
+			}
+			div#area3 {
+				position:absolute;
+				margin-left:45%;
+			}
+			div#area4 {
+				position:absolute;
+				margin-left:63%;
+			}
+			div#area5 {
+				position:absolute;
+				margin-left:80%;
+			}
+			/*div:hover {
+				animation: pockChange 2s;
+			}*/
+			
+			img {
+				display: block;
+				position: absolute;
+				width: 200px;
+			}		
+			
+		</style>
+		<script type="text/javascript" src="js/initDom.js" ></script>
+		
+		<script type="text/javascript">
+			var ary = new Array();
+			for (var i=1; i<=52; i++) {
+				ary[i] = i;
+				console.log(ary[i]);
+			}
+			nowIndex = 1;
+			ary.sort(function (){return Math.random()>0.5?1:-1});
+			for(var i in ary){
+				console.log(ary[i]);
+			}
+			
+			function changeback(position){
+				document.getElementById("poker" + position).src = "img/back.png";
+			}
+			
+			function clickP(this){
+				if(this.changeSign){
+					return;
+				}
+				var clickId = this.id;
+				var clickIdIndex = this.id.s
+				var clickValue = ;
+//				document.getElementById("poker" + position).style.animation = "pockChangeBefor 2s";
+				if(ary[nowIndex-1] == nowIndex){
+					document.getElementById("poker" + position).src = "img/"+ position + ".png";
+					document.getElementById("poker" + position).style.animation = "pockChangeBefor 2s";
+				}else{
+					var pos  = ary[parseInt(position)-1];
+					pos = pos<10?"0"+pos:pos;
+					console.log(parseInt(position) + "  pos值" +pos);
+					document.getElementById("poker" + position).src = "img/" + pos + ".png";
+					document.getElementById("poker" + position).style.animation = "pockChangeBefor 2s";
+					setTimeout("changeback('" + position +"')",2000);
+				}
+				console.log("图片地址"  + document.getElementById("poker" + position).src);
+				// 这里只有第一次点击有效果，后面都触发不了
+				nowIndex ++;
+			}
+			
+		</script>
+	</head>
+	<body onload="initHtmlmiddleRank();">
+		<div id="area1">
+			
+		</div>
+		<div id="area2">
+			
+		</div>
+		<div id="area3">
+			
+		</div>
+		<div id="area4">
+			
+		</div>
+		<div id="area5">
+			
+		</div>
+	</body>
+</html>

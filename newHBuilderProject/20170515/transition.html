@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {
+			width:300px;
+			height: 200px;
+			border: 2px dashed red;
+			border-radius: 10px 20px;
+			/*transition: width 2s, height 2s;*/
+		}
+		
+		
+		
+		@keyframes myAnimation{
+			from{
+				width: 180px;
+				height: 200px;
+				transform: rotate(180deg);
+				background-color: blue;
+			}
+			to{
+				width: 220px;
+				height: 250px;
+				transform: rotate(360deg);
+				background-color: red;
+			}
+		}
+		
+		
+		/*div:hover {
+			animation: myAnimation 2s;
+			width:600px;
+			height: 400px;
+			background-color: red;
+			transform: rotate(30deg, 60deg);
+		}*/
+		
+		
+	</style>
+	<script type="text/javascript">
+		function clickDiv (){
+			document.getElementById("aaa").style.animation = "myAnimation 2s";
+			console.log("111");
+		}
+	</script>
+	
+	<body>
+		<div id="aaa" onclick="clickDiv()">
+			
+		</div>
+	</body>
+</html>
