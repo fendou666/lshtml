@@ -24,6 +24,22 @@ function getcookieTest(c_name){
 	return rec;
 }
 
+function getCookieT2(key){
+		var cookieStr = document.cookie;
+		var ret = ""
+		if(cookieStr.length>0){
+			var keyIndex = cookiestr.indexOf(key);
+			if(keyIndex!=-1){
+				var endIndex = cookiestr.indexof(";", keyIndex);
+				if(endIndex==-1){
+					endIndex = cookiestr.length;
+				}
+				ret = cookieStr.substring(keyIndex+key.length + 1, endIndex);
+			}
+		}
+		return ret;
+	}
+
 
 
 function getCookie(c_name) {

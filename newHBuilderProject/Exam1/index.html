@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		var ls = {};
+		ls.$ = function(id){
+			return document.getElementById(id);
+		}
+		ls.checkData = function(Elmt){
+			var rec = true;
+			var value = Elmt.value;
+			Elmt.focus();
+			if(value==null||value==""){
+				rec = false;
+			}
+			return rec;
+		}
+		ls.addErrorInfo = function(Elmt, checkElmt){
+			var rec = true;
+			if(!ls.checkData(Elmt)){
+				checkElmt.innerText="必须填写，不可以为空";
+				console.log("必须填写");
+				rec = false;
+			}
+			return rec;
+		}
+		ls.infoInit = function(){
+			ls.$("cEmail").innerText="*";
+			ls.$("cUserName").innerText="*";
+			ls.$("cPwd").innerText="*";
+			ls.$("cPwdR").innerText="*";
+			ls.$("cSafeQuesstion").innerText="*";
+			ls.$("cAnswer").innerText="*";
+			ls.$("cAccessCode").innerText="*";
+		}
+		ls.otherCheck = function(){
+			var rec = true;
+			var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+			if(!re.test(ls.$("cEmail").value)){
+				ls.$("cEmail").innerText="邮箱格式不正确";
+				rec = false;
+			}
+			console.log("pwd为" +ls.$("pwd").value);
+			console.log("pwdR为" +ls.$("pwdR").value);
+			if(ls.$("pwdR").value != ls.$("pwd").value){
+				ls.$("pwdR").innerText="上下密码不一致";
+				console.log(ls.$("pwdR").innerText);
+				rec = false;
+			}
+			return rec;
+		}
+		ls.checkAllData = function(){
+			ls.infoInit();
+			var rec = true;
+			if(!ls.addErrorInfo(ls.$("email"), ls.$("cEmail"))
+				| !ls.addErrorInfo(ls.$("userName"), ls.$("cUserName"))
+				| !ls.addErrorInfo(ls.$("pwd"), ls.$("cPwd"))
+				| !ls.addErrorInfo(ls.$("pwdR"), ls.$("cPwdR"))
+				| !ls.addErrorInfo(ls.$("safeQuesstion"), ls.$("cSafeQuesstion"))
+				| !ls.addErrorInfo(ls.$("answer"), ls.$("cAnswer"))
+				| !ls.addErrorInfo(ls.$("accessCode"), ls.$("cAccessCode"))
+			){
+				rec = false;
+			}
+			if(!ls.otherCheck()){
+				rec = false;
+			}
+			console.log("结果" + rec);
+			return rec;			
+		}
+	</script>
+	
+	<body>
+		<form action="#", method="get">
+			<table>
+				<tr>
+					<td>E-mail地址</td>
+					<td><input type="text" name="email" id="email" autocomplete="on" placeholder="test@yahoo.com.cn" />
+						<span style="color:red" id="cEmail">*</span>
+					</td>
+					<td></td>
+				</tr>	
+				<tr>
+					<td>昵称：</td>
+					<td><input type="text" name="userName" id="userName" />
+						<span style="color:red" id="cUserName">*</span>
+					</td>
+					<td>填写后无法修改，请认真填写</td>
+				</tr>
+				<tr>
+					<td>密码设置：</td>
+					<td><input type="password" name="pwd"  id="pwd" />
+						<span style="color:red" id="cPwd">*</span>
+					</td>
+					<td>密码由6-16个字符组成，请使用英文字母加数字或者符号的组合，会更安全</td>
+				</tr>
+				<tr>
+					<td>密码设置：</td>
+					<td><input type="password" name="pwdR" id="pwdR" />
+						<span style="color:red" id="cPwdR">*</span>
+					</td>
+					<td>请再输入一遍您上面输入的密码</td>
+				</tr>
+				<tr>
+					<td>性别：</td>
+					<td>
+						<input type="radio" name="sex" id="sex" value="man" />先生
+						<input type="radio" name="sex" id="sex" value="women" />女士
+					</td>
+					<td></td>
+				</tr>	
+				<tr>
+					<td>安全提问</td>
+					<td>
+						<select name="safeQuesstion" id="safeQuesstion">
+							<option value="address">你的出生地？</option>
+							<option value="teacherName">你的老师姓名?</option>
+						</select>
+						<span style="color:red" id="cSafeQuesstion">*</span>
+					</td>
+					<td>忘记密码时，可以通过安全提示问题找回密码，<span style="color:red">非常重要，请务必牢记。</span></td>
+				</tr>
+				<tr>
+					<td>安全回答：</td>
+					<td><input type="text" name="answer" id="answer" value="" />
+						<span style="color:red" id="cAnswer">*</span>
+					</td>
+					<td>忘记密码时，可以通过安全提示问题找回密码，<span style="color:red">非常重要，通过后无法修改，请您千万牢记。</span></td>
+				</tr>
+				<tr>
+					<td>验证码</td>
+					<td><input type="text" name="accessCode" id="accessCode" value="" />
+						<span style="color:red" id="cAccessCode">*</span>
+					</td>
+					<td>请输入右侧字符，看不清楚？换个图片</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="submit" name="" id="" value="同意以下服务条款，提交注册信息" onclick="return ls.checkAllData()" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

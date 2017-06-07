@@ -3,19 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<style type="text/css">
+			<style type="text/css">
 			@keyframes pockChangeBefor{
 				from{
-					transform: rotateY(90deg); 
+					transform: rotateY(90deg);
 				}
 			}
-			
-			@keyframes pockChangeEnd{
-				from{
-					transform: rotateY(180deg);
-				}
-			}
-			
 			div#area1 {
 				position:absolute;
 				margin-left:10%;
@@ -36,33 +29,58 @@
 				position:absolute;
 				margin-left:80%;
 			}
-			/*div:hover {
-				animation: pockChange 2s;
-			}*/
 			
 			img {
 				display: block;
 				position: absolute;
 				width: 200px;
 			}		
-			
 		</style>
-		<script type="text/javascript" src="js/initDom.js" ></script>
-		
 		<script type="text/javascript">
+			
+			var totle = 5;
+			
 			var ary = new Array();
-			for (var i=1; i<=30; i++) {
-				ary[i] = i;
+			for (var i=0; i<totle; i++) {
+				ary[i] = i+1; 
 			}
 			ary.sort(function (){return Math.random()>0.5?1:-1});
+			for (var i=0; i<totle; i++) {
+				console.log(ary[i]);
+			}
+			
+			function initHtmlPrimary(){
+				for (var i=1; i<=5; i++) {
+					var divP = document.createElement("img");
+					divP.id = "poker0" + i;
+					divP.src = "img/back.png";
+					divP.changeSign = false;
+					document.getElementById("area" +i).appendChild(divP);
+				}
+				initEvent1();
+			}
+			
+			function initEvent1(){
+				for(var i=1;i<=5;i++){
+					var pos = i<10?"0"+i:""+i;
+//					document.getElementById("poker" + pos).onclick = function(){console.log(this.changeSign); clickP(this);};
+					document.getElementById("poker" + pos).onclick = function(){clickP(this);};
+				}			
+			}
+			
+//			function changeback(elment){
+//				elment.src = "img/back.png";
+//			}
+
 			
 			function changeback(id){
 				document.getElementById(id).src = "img/back.png";
 			}
 			
+			
 			function clickP(elment){
+				
 				if(elment.changeSign){
-					element.style.display = "none";
 					return;
 				}
 				var clickId = elment.id;
@@ -70,19 +88,20 @@
 				var clickIdIndex = parseInt(patt.exec(elment.id));
 				var clickValue = ary[clickIdIndex-1];
 				console.log("当前ID" + clickId + "当前位置" + clickIdIndex + "当前位置值" +clickValue);
+//				document.getElementById("poker" + position).style.animation = "pockChangeBefor 2s";
 				
 				var pos = clickValue<10? "0" + clickValue : clickValue;
 				elment.src = "img/" + pos + ".png";
 				elment.style.animation = "pockChangeBefor 2s";
-				if(clickValue != clickIdIndex){
+				if(clickValue == clickIdIndex){
+				}else{
 					setTimeout("changeback('" + clickId +"')",2000);
 				}
-				elment.changeSign = true;
+//				console.log("图片地址"  + document.getElementById("poker" + position).src);
 			}
-			
 		</script>
 	</head>
-	<body onload="initHtml(5, 6, 30);">
+	<body onload="initHtmlPrimary()">
 		<div id="area1">
 			
 		</div>
