@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>太极八卦图</title>
+		<style type="text/css">
+			/*定义一个div*/
+			#div {
+				width: 600px;
+				height: 600px;
+				margin: auto;/*水平居中*/
+			}
+			
+			#canva {
+				border: 2px solid sandybrown;
+				background-color: bisque;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div">
+			<canvas id="canva" width="600" height="600"></canvas>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//获得canvas这个对象
+		var canva = document.getElementById("canva");
+		//设置上下文，相当于画笔
+		var context = canva.getContext("2d");
+		
+		// 将坐标系的原点移动到(300, 300)那点上
+		// 原点只移动一次，且固定在(300, 300)位置
+		context.translate(300, 300);
+		
+		// 缩放x，y坐标及宽高，值为 0.5==50% | 2==200%
+		context.scale(0.5, 0.5);
+//		draw();
+		function draw(){
+			// 旋转的是坐标系
+			// 先旋转，之后再新的坐标系上绘制才能看见效果
+			context.rotate(Math.PI / 180);
+			
+			context.beginPath(); //新建图层
+			context.fillStyle = "black";//填充样式
+			//x,y,radius,起始角度，结束角度，False = 顺时针，true = 逆时针
+			context.arc(0, 0, 300, Math.PI / 2, Math.PI / 2 * 3, false);
+			context.fill();//填充
+			
+			context.beginPath();
+			context.fillStyle = "white";
+			context.arc(0, 0, 300, Math.PI / 2, Math.PI / 2 * 3, true);
+			context.fill();
+			
+			context.beginPath();
+			context.arc(0, 150, 150, 0, Math.PI * 2, false);
+			context.fill();
+//			
+			context.beginPath();
+			context.fillStyle = "black";
+			context.arc(0, -150, 150, 0, Math.PI * 2, true);
+			context.fill();
+//			
+			context.beginPath();
+			context.arc(0, 150, 40, 0, Math.PI * 2);
+			context.fill();
+//			
+			context.beginPath();
+			context.fillStyle = "white";
+			context.arc(0, -150, 40, 0, Math.PI * 2);
+			context.fill();
+		}
+		
+		// 形参动画：多少毫秒执行一次，一次旋转多少度
+		// 多少毫秒执行一次方法
+		//setInterval()方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+		//该方法会不停地调用函数，直到clearInterval() 被调用或窗户被关闭
+//		window.setInterval(draw,1);
+		setInterval(draw, 1);
+		
+	</script>
+</html>
